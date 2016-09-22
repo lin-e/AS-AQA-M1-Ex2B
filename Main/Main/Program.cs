@@ -7,6 +7,11 @@ namespace Main
     {
         static string botPrefix = "[BOT] > ";
         static string triggerString = ".";
+        const string s = "s";
+        const string u = "u";
+        const string v = "v";
+        const string a = "a";
+        const string t = "t";
         static void Main(string[] args)
         {
             while (true)
@@ -21,10 +26,10 @@ namespace Main
                         Console.ForegroundColor = ConsoleColor.Gray;
                         switch (commandArgs[0].ToLower().Remove(0, triggerString.Length))
                         {
-                            case "a":
+                            case a:
                                 {
                                     Dictionary<string, decimal> varDict = new Dictionary<string, decimal>();
-                                    string[] setVars = { "s", "v", "t", "u" };
+                                    string[] setVars = { s, v, t, u };
                                     string missingVar = "";
                                     int missingVars = 0;
                                     foreach (string singleVar in setVars)
@@ -46,28 +51,28 @@ namespace Main
                                         decimal result = 0;
                                         switch (missingVar)
                                         {
-                                            case "s":
+                                            case s:
                                                 {
-                                                    result = (decimal)0.5 * (varDict["u"] + varDict["v"]) * varDict["t"];
-                                                    Console.WriteLine("(({0} + {1}) * {2}) / 2", varDict["u"], varDict["v"], varDict["t"]);
+                                                    result = (decimal)0.5 * (varDict[u] + varDict[v]) * varDict[t];
+                                                    Console.WriteLine("(({0} + {1}) * {2}) / 2", varDict[u], varDict[v], varDict[t]);
                                                 }
                                                 break;
-                                            case "v":
+                                            case v:
                                                 {
-                                                    result = ((decimal)2 * varDict["s"] / varDict["t"]) - varDict["u"];
-                                                    Console.WriteLine("(2 * {0} / {1}) - {2}", varDict["s"], varDict["t"], varDict["u"]);
+                                                    result = ((decimal)2 * varDict[s] / varDict[t]) - varDict[u];
+                                                    Console.WriteLine("(2 * {0} / {1}) - {2}", varDict[s], varDict[t], varDict[u]);
                                                 }
                                                 break;
-                                            case "t":
+                                            case t:
                                                 {
-                                                    result = ((decimal)2 * varDict["s"]) / (varDict["u"] + varDict["v"]);
-                                                    Console.WriteLine("(2 * {0}) / ({1} + {2})", varDict["s"], varDict["u"], varDict["v"]);
+                                                    result = ((decimal)2 * varDict[s]) / (varDict[u] + varDict[v]);
+                                                    Console.WriteLine("(2 * {0}) / ({1} + {2})", varDict[s], varDict[u], varDict[v]);
                                                 }
                                                 break;
-                                            case "u":
+                                            case u:
                                                 {
-                                                    result = ((decimal)2 * varDict["s"] / varDict["t"]) - varDict["v"];
-                                                    Console.WriteLine("(2 * {0} / {1}) - {2}", varDict["s"], varDict["t"], varDict["v"]);
+                                                    result = ((decimal)2 * varDict[s] / varDict[t]) - varDict[v];
+                                                    Console.WriteLine("(2 * {0} / {1}) - {2}", varDict[s], varDict[t], varDict[v]);
                                                 }
                                                 break;
                                         }
@@ -79,10 +84,10 @@ namespace Main
                                     }
                                 }
                                 break;
-                            case "s":
+                            case s:
                                 {
                                     Dictionary<string, decimal> varDict = new Dictionary<string, decimal>();
-                                    string[] setVars = { "a", "v", "t", "u" };
+                                    string[] setVars = { a, v, t, u };
                                     string missingVar = "";
                                     int missingVars = 0;
                                     foreach (string singleVar in setVars)
@@ -104,28 +109,28 @@ namespace Main
                                         decimal result = 0;
                                         switch (missingVar)
                                         {
-                                            case "a":
+                                            case a:
                                                 {
-                                                    result = (varDict["v"] - varDict["u"]) / varDict["t"];
-                                                    Console.WriteLine("({0} - {1}) / {2}", varDict["v"], varDict["u"], varDict["t"]);
+                                                    result = (varDict[v] - varDict[u]) / varDict[t];
+                                                    Console.WriteLine("({0} - {1}) / {2}", varDict[v], varDict[u], varDict[t]);
                                                 }
                                                 break;
-                                            case "v":
+                                            case v:
                                                 {
-                                                    result = varDict["u"] + (varDict["a"] * varDict["t"]);
-                                                    Console.WriteLine("{0} + ({1} * {2})", varDict["u"], varDict["a"], varDict["t"]);
+                                                    result = varDict[u] + (varDict[a] * varDict[t]);
+                                                    Console.WriteLine("{0} + ({1} * {2})", varDict[u], varDict[a], varDict[t]);
                                                 }
                                                 break;
-                                            case "t":
+                                            case t:
                                                 {
-                                                    result = (varDict["v"] - varDict["u"]) / varDict["a"];
-                                                    Console.WriteLine("({0} - {1}) / {2}", varDict["v"], varDict["u"], varDict["a"]);
+                                                    result = (varDict[v] - varDict[u]) / varDict[a];
+                                                    Console.WriteLine("({0} - {1}) / {2}", varDict[v], varDict[u], varDict[a]);
                                                 }
                                                 break;
-                                            case "u":
+                                            case u:
                                                 {
-                                                    result = varDict["v"] - (varDict["a"] * varDict["t"]);
-                                                    Console.WriteLine("{0} - ({1} * {2})", varDict["v"], varDict["a"], varDict["t"]);
+                                                    result = varDict[v] - (varDict[a] * varDict[t]);
+                                                    Console.WriteLine("{0} - ({1} * {2})", varDict[v], varDict[a], varDict[t]);
                                                 }
                                                 break;
                                         }
@@ -137,10 +142,10 @@ namespace Main
                                     }
                                 }
                                 break;
-                            case "v":
+                            case v:
                                 {
                                     Dictionary<string, decimal> varDict = new Dictionary<string, decimal>();
-                                    string[] setVars = { "a", "s", "t", "u" };
+                                    string[] setVars = { a, s, t, u };
                                     string missingVar = "";
                                     int missingVars = 0;
                                     foreach (string singleVar in setVars)
@@ -162,34 +167,34 @@ namespace Main
                                         decimal result = 0;
                                         switch (missingVar)
                                         {
-                                            case "a":
+                                            case a:
                                                 {
-                                                    result = ((decimal)2 * (varDict["s"] - (varDict["u"] * varDict["t"]))) / (varDict["t"] * varDict["t"]);
-                                                    Console.WriteLine("(2 * ({0} - ({1} * {2}))) / {2}^2", varDict["s"], varDict["u"], varDict["t"]);
+                                                    result = ((decimal)2 * (varDict[s] - (varDict[u] * varDict[t]))) / (varDict[t] * varDict[t]);
+                                                    Console.WriteLine("(2 * ({0} - ({1} * {2}))) / {2}^2", varDict[s], varDict[u], varDict[t]);
                                                 }
                                                 break;
-                                            case "s":
+                                            case s:
                                                 {
-                                                    result = (varDict["u"] * varDict["t"]) + ((decimal)0.5 * varDict["a"] * varDict["t"] * varDict["t"]);
-                                                    Console.WriteLine("({0} * {1}) + ({2}*{1}^2)/2", varDict["u"], varDict["t"], varDict["a"]);
+                                                    result = (varDict[u] * varDict[t]) + ((decimal)0.5 * varDict[a] * varDict[t] * varDict[t]);
+                                                    Console.WriteLine("({0} * {1}) + ({2}*{1}^2)/2", varDict[u], varDict[t], varDict[a]);
                                                 }
                                                 break;
-                                            case "t":
+                                            case t:
                                                 {
                                                     try
                                                     {
-                                                        decimal result_1 = ((((decimal)-1) * varDict["u"]) + (decimal)(Math.Sqrt((double)((varDict["u"] * varDict["u"]) + ((decimal)2 * varDict["s"] * varDict["a"]))))) / varDict["a"];
-                                                        decimal result_2 = ((((decimal)-1) * varDict["u"]) - (decimal)(Math.Sqrt((double)((varDict["u"] * varDict["u"]) + ((decimal)2 * varDict["s"] * varDict["a"]))))) / varDict["a"];
+                                                        decimal result_1 = ((((decimal)-1) * varDict[u]) + (decimal)(Math.Sqrt((double)((varDict[u] * varDict[u]) + ((decimal)2 * varDict[s] * varDict[a]))))) / varDict[a];
+                                                        decimal result_2 = ((((decimal)-1) * varDict[u]) - (decimal)(Math.Sqrt((double)((varDict[u] * varDict[u]) + ((decimal)2 * varDict[s] * varDict[a]))))) / varDict[a];
                                                         Console.WriteLine("t1: " + result_1.ToString());
                                                         Console.WriteLine("t2: " + result_2.ToString());
                                                     }
                                                     catch { }
                                                 }
                                                 break;
-                                            case "u":
+                                            case u:
                                                 {
-                                                    result = (varDict["s"] - ((decimal)0.5 * varDict["a"] * (varDict["t"] * varDict["t"]))) / varDict["t"];
-                                                    Console.WriteLine("({0} - (({1} * {2}^2) / 2)) / {2}", varDict["s"], varDict["a"], varDict["t"]);
+                                                    result = (varDict[s] - ((decimal)0.5 * varDict[a] * (varDict[t] * varDict[t]))) / varDict[t];
+                                                    Console.WriteLine("({0} - (({1} * {2}^2) / 2)) / {2}", varDict[s], varDict[a], varDict[t]);
                                                 }
                                                 break;
                                         }
@@ -201,10 +206,10 @@ namespace Main
                                     }
                                 }
                                 break;
-                            case "t":
+                            case t:
                                 {
                                     Dictionary<string, decimal> varDict = new Dictionary<string, decimal>();
-                                    string[] setVars = { "a", "s", "v", "u" };
+                                    string[] setVars = { a, s, v, u };
                                     string missingVar = "";
                                     int missingVars = 0;
                                     foreach (string singleVar in setVars)
@@ -226,28 +231,28 @@ namespace Main
                                         decimal result = 0;
                                         switch (missingVar)
                                         {
-                                            case "a":
+                                            case a:
                                                 {
-                                                    result = ((varDict["v"] * varDict["v"]) - (varDict["u"] * varDict["u"])) / ((decimal)2 * varDict["s"]);
-                                                    Console.WriteLine("({0}^2 - {1}^2) / (2 * {2})", varDict["v"], varDict["u"], varDict["s"]);
+                                                    result = ((varDict[v] * varDict[v]) - (varDict[u] * varDict[u])) / ((decimal)2 * varDict[s]);
+                                                    Console.WriteLine("({0}^2 - {1}^2) / (2 * {2})", varDict[v], varDict[u], varDict[s]);
                                                 }
                                                 break;
-                                            case "s":
+                                            case s:
                                                 {
-                                                    result = ((varDict["v"] * varDict["v"]) - (varDict["u"] * varDict["u"])) / ((decimal)2 * varDict["a"]);
-                                                    Console.WriteLine("({0}^2 - {1}^2) / (2 * {2})", varDict["v"], varDict["u"], varDict["a"]);
+                                                    result = ((varDict[v] * varDict[v]) - (varDict[u] * varDict[u])) / ((decimal)2 * varDict[a]);
+                                                    Console.WriteLine("({0}^2 - {1}^2) / (2 * {2})", varDict[v], varDict[u], varDict[a]);
                                                 }
                                                 break;
-                                            case "v":
+                                            case v:
                                                 {
-                                                    result = (decimal)Math.Sqrt((double)((varDict["u"] * varDict["u"]) + ((decimal)2 * varDict["a"] * varDict["s"])));
-                                                    Console.WriteLine("sqrt({0}^2 + (2 * {1} * {2}))", varDict["u"], varDict["a"], varDict["s"]);
+                                                    result = (decimal)Math.Sqrt((double)((varDict[u] * varDict[u]) + ((decimal)2 * varDict[a] * varDict[s])));
+                                                    Console.WriteLine("sqrt({0}^2 + (2 * {1} * {2}))", varDict[u], varDict[a], varDict[s]);
                                                 }
                                                 break;
-                                            case "u":
+                                            case u:
                                                 {
-                                                    result = (decimal)Math.Sqrt((double)((varDict["v"] * varDict["v"]) - ((decimal)2 * varDict["a"] * varDict["s"])));
-                                                    Console.WriteLine("sqrt({0}^2 - (2 * {1} * {2}))", varDict["v"], varDict["a"], varDict["s"]);
+                                                    result = (decimal)Math.Sqrt((double)((varDict[v] * varDict[v]) - ((decimal)2 * varDict[a] * varDict[s])));
+                                                    Console.WriteLine("sqrt({0}^2 - (2 * {1} * {2}))", varDict[v], varDict[a], varDict[s]);
                                                 }
                                                 break;
                                         }
@@ -259,10 +264,10 @@ namespace Main
                                     }
                                 }
                                 break;
-                            case "u":
+                            case u:
                                 {
                                     Dictionary<string, decimal> varDict = new Dictionary<string, decimal>();
-                                    string[] setVars = { "a", "s", "v", "t" };
+                                    string[] setVars = { a, s, v, t };
                                     string missingVar = "";
                                     int missingVars = 0;
                                     foreach (string singleVar in setVars)
@@ -284,30 +289,30 @@ namespace Main
                                         decimal result = 0;
                                         switch (missingVar)
                                         {
-                                            case "a":
+                                            case a:
                                                 {
-                                                    result = ((decimal)2 * (varDict["s"] - (varDict["v"] * varDict["t"]))) / (((decimal)-1) * (varDict["t"] * varDict["t"]));
-                                                    Console.WriteLine("(-2 * ({0} - ({1} * {2}))) / {2}^2", varDict["s"], varDict["v"], varDict["t"]);
+                                                    result = ((decimal)2 * (varDict[s] - (varDict[v] * varDict[t]))) / (((decimal)-1) * (varDict[t] * varDict[t]));
+                                                    Console.WriteLine("(-2 * ({0} - ({1} * {2}))) / {2}^2", varDict[s], varDict[v], varDict[t]);
                                                 }
                                                 break;
-                                            case "s":
+                                            case s:
                                                 {
-                                                    result = (varDict["v"] * varDict["t"]) - ((decimal)0.5 * varDict["a"] * varDict["t"] * varDict["t"]);
-                                                    Console.WriteLine("({0} * {1}) - (({2} * {1}^2) / 2)", varDict["v"], varDict["t"], varDict["a"]);
+                                                    result = (varDict[v] * varDict[t]) - ((decimal)0.5 * varDict[a] * varDict[t] * varDict[t]);
+                                                    Console.WriteLine("({0} * {1}) - (({2} * {1}^2) / 2)", varDict[v], varDict[t], varDict[a]);
                                                 }
                                                 break;
-                                            case "v":
+                                            case v:
                                                 {
-                                                    result = (varDict["s"] + ((decimal)0.5 * varDict["a"] * varDict["t"] * varDict["t"])) / varDict["t"];
-                                                    Console.WriteLine("({0} + (({1} * {2}^2)/2)) / {2}", varDict["s"], varDict["a"], varDict["t"]);
+                                                    result = (varDict[s] + ((decimal)0.5 * varDict[a] * varDict[t] * varDict[t])) / varDict[t];
+                                                    Console.WriteLine("({0} + (({1} * {2}^2)/2)) / {2}", varDict[s], varDict[a], varDict[t]);
                                                 }
                                                 break;
-                                            case "t":
+                                            case t:
                                                 {
                                                     try
                                                     {
-                                                        decimal result_1 = (varDict["v"] + (decimal)Math.Sqrt((double)((varDict["v"] * varDict["v"]) - ((decimal)2 * varDict["s"] * varDict["a"]))));
-                                                        decimal result_2 = (varDict["v"] - (decimal)Math.Sqrt((double)((varDict["v"] * varDict["v"]) - ((decimal)2 * varDict["s"] * varDict["a"]))));
+                                                        decimal result_1 = (varDict[v] + (decimal)Math.Sqrt((double)((varDict[v] * varDict[v]) - ((decimal)2 * varDict[s] * varDict[a]))));
+                                                        decimal result_2 = (varDict[v] - (decimal)Math.Sqrt((double)((varDict[v] * varDict[v]) - ((decimal)2 * varDict[s] * varDict[a]))));
                                                         Console.WriteLine("t1: " + result_1.ToString());
                                                         Console.WriteLine("t2: " + result_2.ToString());
                                                     }
