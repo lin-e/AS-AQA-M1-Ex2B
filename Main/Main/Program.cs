@@ -176,7 +176,7 @@ namespace Main
                                             case s:
                                                 {
                                                     result = (varDict[u] * varDict[t]) + ((decimal)0.5 * varDict[a] * varDict[t] * varDict[t]);
-                                                    Console.WriteLine("({0} * {1}) + ({2}*{1}^2)/2", varDict[u], varDict[t], varDict[a]);
+                                                    Console.WriteLine("({0} * {1}) + ({2}*{1}^2) / 2", varDict[u], varDict[t], varDict[a]);
                                                 }
                                                 break;
                                             case t:
@@ -304,7 +304,7 @@ namespace Main
                                             case v:
                                                 {
                                                     result = (varDict[s] + ((decimal)0.5 * varDict[a] * varDict[t] * varDict[t])) / varDict[t];
-                                                    Console.WriteLine("({0} + (({1} * {2}^2)/2)) / {2}", varDict[s], varDict[a], varDict[t]);
+                                                    Console.WriteLine("({0} + (({1} * {2}^2) / 2)) / {2}", varDict[s], varDict[a], varDict[t]);
                                                 }
                                                 break;
                                             case t:
