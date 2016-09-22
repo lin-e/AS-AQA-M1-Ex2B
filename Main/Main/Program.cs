@@ -49,21 +49,25 @@ namespace Main
                                             case "s":
                                                 {
                                                     result = (decimal)0.5 * (varDict["u"] + varDict["v"]) * varDict["t"];
+                                                    Console.WriteLine("(({0} + {1}) * {2}) / 2", varDict["u"], varDict["v"], varDict["t"]);
                                                 }
                                                 break;
                                             case "v":
                                                 {
-                                                    result = ((decimal)2 * varDict["s"] * varDict["t"]) - varDict["u"];
+                                                    result = ((decimal)2 * varDict["s"] / varDict["t"]) - varDict["u"];
+                                                    Console.WriteLine("(2 * {0} / {1}) - {2}", varDict["s"], varDict["t"], varDict["u"]);
                                                 }
                                                 break;
                                             case "t":
                                                 {
                                                     result = ((decimal)2 * varDict["s"]) / (varDict["u"] + varDict["v"]);
+                                                    Console.WriteLine("(2 * {0}) / ({1} + {2})", varDict["s"], varDict["u"], varDict["v"]);
                                                 }
                                                 break;
                                             case "u":
                                                 {
-                                                    result = ((decimal)2 * varDict["s"] * varDict["t"]) - varDict["v"];
+                                                    result = ((decimal)2 * varDict["s"] / varDict["t"]) - varDict["v"];
+                                                    Console.WriteLine("(2 * {0} / {1}) - {2}", varDict["s"], varDict["t"], varDict["v"]);
                                                 }
                                                 break;
                                         }
@@ -103,21 +107,25 @@ namespace Main
                                             case "a":
                                                 {
                                                     result = (varDict["v"] - varDict["u"]) / varDict["t"];
+                                                    Console.WriteLine("({0} - {1}) / {2}", varDict["v"], varDict["u"], varDict["t"]);
                                                 }
                                                 break;
                                             case "v":
                                                 {
                                                     result = varDict["u"] + (varDict["a"] * varDict["t"]);
+                                                    Console.WriteLine("{0} + ({1} * {2})", varDict["u"], varDict["a"], varDict["t"]);
                                                 }
                                                 break;
                                             case "t":
                                                 {
                                                     result = (varDict["v"] - varDict["u"]) / varDict["a"];
+                                                    Console.WriteLine("({0} - {1}) / {2}", varDict["v"], varDict["u"], varDict["a"]);
                                                 }
                                                 break;
                                             case "u":
                                                 {
                                                     result = varDict["v"] - (varDict["a"] * varDict["t"]);
+                                                    Console.WriteLine("{0} - ({1} * {2})", varDict["v"], varDict["a"], varDict["t"]);
                                                 }
                                                 break;
                                         }
@@ -157,11 +165,13 @@ namespace Main
                                             case "a":
                                                 {
                                                     result = ((decimal)2 * (varDict["s"] - (varDict["u"] * varDict["t"]))) / (varDict["t"] * varDict["t"]);
+                                                    Console.WriteLine("(2 * ({0} - ({1} * {2}))) / {2}^2", varDict["s"], varDict["u"], varDict["t"]);
                                                 }
                                                 break;
                                             case "s":
                                                 {
                                                     result = (varDict["u"] * varDict["t"]) + ((decimal)0.5 * varDict["a"] * varDict["t"] * varDict["t"]);
+                                                    Console.WriteLine("({0} * {1}) + ({2}*{1}^2)/2", varDict["u"], varDict["t"], varDict["a"]);
                                                 }
                                                 break;
                                             case "t":
@@ -179,6 +189,7 @@ namespace Main
                                             case "u":
                                                 {
                                                     result = (varDict["s"] - ((decimal)0.5 * varDict["a"] * (varDict["t"] * varDict["t"]))) / varDict["t"];
+                                                    Console.WriteLine("({0} - (({1} * {2}^2) / 2)) / {2}", varDict["s"], varDict["a"], varDict["t"]);
                                                 }
                                                 break;
                                         }
@@ -218,21 +229,25 @@ namespace Main
                                             case "a":
                                                 {
                                                     result = ((varDict["v"] * varDict["v"]) - (varDict["u"] * varDict["u"])) / ((decimal)2 * varDict["s"]);
+                                                    Console.WriteLine("({0}^2 - {1}^2) / (2 * {2})", varDict["v"], varDict["u"], varDict["s"]);
                                                 }
                                                 break;
                                             case "s":
                                                 {
                                                     result = ((varDict["v"] * varDict["v"]) - (varDict["u"] * varDict["u"])) / ((decimal)2 * varDict["a"]);
+                                                    Console.WriteLine("({0}^2 - {1}^2) / (2 * {2})", varDict["v"], varDict["u"], varDict["a"]);
                                                 }
                                                 break;
                                             case "v":
                                                 {
                                                     result = (decimal)Math.Sqrt((double)((varDict["u"] * varDict["u"]) + ((decimal)2 * varDict["a"] * varDict["s"])));
+                                                    Console.WriteLine("sqrt({0}^2 + (2 * {1} * {2}))", varDict["u"], varDict["a"], varDict["s"]);
                                                 }
                                                 break;
                                             case "u":
                                                 {
                                                     result = (decimal)Math.Sqrt((double)((varDict["v"] * varDict["v"]) - ((decimal)2 * varDict["a"] * varDict["s"])));
+                                                    Console.WriteLine("sqrt({0}^2 - (2 * {1} * {2}))", varDict["v"], varDict["a"], varDict["s"]);
                                                 }
                                                 break;
                                         }
@@ -272,16 +287,19 @@ namespace Main
                                             case "a":
                                                 {
                                                     result = ((decimal)2 * (varDict["s"] - (varDict["v"] * varDict["t"]))) / (((decimal)-1) * (varDict["t"] * varDict["t"]));
+                                                    Console.WriteLine("(-2 * ({0} - ({1} * {2}))) / {2}^2", varDict["s"], varDict["v"], varDict["t"]);
                                                 }
                                                 break;
                                             case "s":
                                                 {
                                                     result = (varDict["v"] * varDict["t"]) - ((decimal)0.5 * varDict["a"] * varDict["t"] * varDict["t"]);
+                                                    Console.WriteLine("({0} * {1}) - (({2} * {1}^2) / 2)", varDict["v"], varDict["t"], varDict["a"]);
                                                 }
                                                 break;
                                             case "v":
                                                 {
                                                     result = (varDict["s"] + ((decimal)0.5 * varDict["a"] * varDict["t"] * varDict["t"])) / varDict["t"];
+                                                    Console.WriteLine("({0} + (({1} * {2}^2)/2)) / {2}", varDict["s"], varDict["a"], varDict["t"]);
                                                 }
                                                 break;
                                             case "t":
